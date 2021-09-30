@@ -75,10 +75,9 @@ class LinkedList<T> {
     if (this.head === null) {
 
       this.tail = newNode;
-    }
-    else
 
-      this.head = newNode;
+    }
+
   }
 
   /**
@@ -92,10 +91,9 @@ class LinkedList<T> {
     if (this.tail === null) {
 
       this.head = newNode;
-    }
-    else
 
-      this.tail = newNode;
+    }
+
   }
 
   /**
@@ -191,8 +189,19 @@ class LinkedList<T> {
    * number of items in list
    */
   public get length(): number {
-    return 0;
+    
+    let nodeLength = 0;
+
+    for ( let currentNode = this.head; currentNode != null; currentNode = currentNode.next ) {
+
+      nodeLength++
+
+    }
+  
+  return nodeLength;
+
   }
+
 }
 
 export default LinkedList;

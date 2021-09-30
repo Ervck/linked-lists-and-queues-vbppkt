@@ -69,9 +69,16 @@ class LinkedList<T> {
    * @param item - item to add to front of list
    */
   public insertAtFront(item: T): void {
-    // implement this
-    // ADD to this: need to consider empty list for tail
-    //              also update number of Nodes
+
+    let newNode = new LinkNode(item, this.head);
+
+    if (this.head === null) {
+
+      this.tail = newNode;
+    }
+    else
+
+      this.head = newNode;
   }
 
   /**
@@ -79,16 +86,25 @@ class LinkedList<T> {
    * @param item - item to add to end of list
    */
   public insertAtEnd(item: T): void {
-    // implement this
+
+    let newNode = new LinkNode(item, null);
+
+    if (this.tail === null) {
+
+      this.head = newNode;
+    }
+    else
+
+      this.tail = newNode;
   }
 
   /**
    * Prints string version of each Node on its own line
    */
-  public printAllNodes(): void {}
+  public printAllNodes(): void {
     const makeTable = (current: LinkNode<T> | null): void => {
       console.log(current.value.toString());
-      if (current != null) {
+      if (current !== null) {
         // stopping condition?
         console.log(current.value.toString());
         makeTable(current.next); // go to index of next item replaced with?

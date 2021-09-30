@@ -120,8 +120,20 @@ class LinkedList<T> {
    * @returns string representation of linked list
    */
   public toString(): string {
-    // return string representation (items separated by commas)
-    return '';
+
+    const makeTable = (current: LinkNode<T> | null, acc: string): string => {
+
+      if (current !== null) {
+
+        return makeTable(current.next, acc + ',' + current.value.toString());
+      } else {
+
+        return acc.substring(1);
+      }
+    };
+    
+    return makeTable(this.head, '');
+    
   }
 
   /**

@@ -193,7 +193,7 @@ class LinkedList<T> {
    * number of items in list
    */
   public get length(): number {
-    
+    /*
     let nodeLength = 0;
 
     for ( let currentNode = this.head; currentNode != null; currentNode = currentNode.next ) {
@@ -203,8 +203,27 @@ class LinkedList<T> {
     }
   
   return nodeLength;
+    */
 
-  }
+    const makeTable = ( currentNode:LinkNode<T>, nodeLength:number ):number => {
+      
+      if ( currentNode !== null ) {
+
+        return makeTable( currentNode.next, nodeLength + 1 );
+
+      }
+
+      else {
+
+        
+
+      }
+
+    return makeTable(this.head, 0);
+
+    }
+
+ }
 
 }
 

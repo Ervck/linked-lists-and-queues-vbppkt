@@ -78,6 +78,8 @@ class LinkedList<T> {
 
     }
 
+      this.head = newNode
+
   }
 
   /**
@@ -93,6 +95,8 @@ class LinkedList<T> {
       this.head = newNode;
 
     }
+
+      this.tail = newNode;
 
   }
 

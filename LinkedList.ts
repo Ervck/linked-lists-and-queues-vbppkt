@@ -34,9 +34,13 @@ class LinkedList<T> {
    */
   public nodeAt(index: number): LinkNode<T> {
 
-    const makeTable = (currentIndex: number, currentNode: number): number => {
+    const makeTable = (currentIndex: number, currentNode: LinkNode<T>): LinkNode<T> => {
 
-      
+      if (currentNode !== null) {
+
+        
+
+      }
 
     }
   }

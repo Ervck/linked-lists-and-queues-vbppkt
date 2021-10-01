@@ -215,13 +215,13 @@ class LinkedList<T> {
 
       else {
 
-        
+        return nodeLength;
 
       }
 
-    return makeTable(this.head, 0);
-
     }
+
+    return makeTable(this.head, 0);
 
  }
 

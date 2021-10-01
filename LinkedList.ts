@@ -38,11 +38,20 @@ class LinkedList<T> {
 
       if ( currentIndex !== index ) {
 
-        
+       return makeTable( currentIndex + 1, currentNode.next ); 
+
+      }
+
+      else {
+
+        return currentNode;
 
       }
 
     }
+
+    return makeTable(0, this.head);
+
   }
 
   /**

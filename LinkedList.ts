@@ -61,7 +61,7 @@ class LinkedList<T> {
    */
   public itemAt(index: number): T {
     // this should be one line using your nodeAt helper function
-    return Object(42) as T; // remove this line
+    return this.nodeAt(index).value; // remove this line
   }
 
   /**
@@ -175,6 +175,27 @@ class LinkedList<T> {
     //    nodeAt to get the Node at the previous index and
     //    change its next Node to be a Node with this item
     // 3. index = this.length-1: Call insertAtEnd
+
+    if (index === 0) {
+
+      this.insertAtFront(item);
+
+    }
+
+    else if (index === this.length) {
+
+      this.insertAtEnd(item);
+
+    }
+     
+    else {
+
+      let prevNode = this.nodeAt(index - 1);
+      let newNode = new LinkNode(item, prevNode.next);
+      prevNode.next = newNode;
+
+    }
+
   }
 
   /**

@@ -92,10 +92,11 @@ class LinkedList<T> {
 
     if (this.tail === null) {
 
-      this.head = newNode;
+      this.insertAtFront(item);
 
     }
-
+    
+      this.tail.next = newNode;
       this.tail = newNode;
 
   }
@@ -187,7 +188,7 @@ class LinkedList<T> {
       this.insertAtEnd(item);
 
     }
-     
+
     else {
 
       let prevNode = this.nodeAt(index - 1);

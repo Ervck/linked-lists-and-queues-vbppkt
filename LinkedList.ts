@@ -146,6 +146,17 @@ class LinkedList<T> {
    */
   public indexOf(item: T): number {
     // find index of first occurrence of item (assume 0 is first node, 1 is second, etc.)
+
+    for (let i = 0; i < this.length; i++) {
+      
+      if (this.itemAt(i) === item) {
+        
+        return i;
+     
+      }
+
+    }
+    
     return -1;
   }
 

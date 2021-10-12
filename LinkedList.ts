@@ -156,7 +156,7 @@ class LinkedList<T> {
       }
 
     }
-    
+
     return -1;
   }
 
@@ -177,7 +177,37 @@ class LinkedList<T> {
     // 4. index = this.length - 1: use private method
     //    nodeAt to get the Node that comes at the previous
     //    index and change its next Node; ALSO change tail
-    return Object(42) as T;
+
+    const value = this.nodeAt(index).value;
+
+    if (index == 1) {
+
+      this.head = null;
+      this.tail = null;
+      
+    } 
+
+    else if (index === 0) {
+
+      this.head = this.head.next;
+
+    }
+
+    else if (index === this.length - 1) {
+
+      this.tail = this.nodeAt(this.length - 2);
+      this.nodeAt(index - 1).next = null;
+
+    } 
+      
+    else {
+
+      this.nodeAt(index - 1).next = this.nodeAt(index + 1);
+
+    }
+    
+    return value;
+    
   }
 
   public insert(index: number, item: T): void {

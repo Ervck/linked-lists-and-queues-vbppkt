@@ -34,11 +34,11 @@ class LinkedList<T> {
    */
   public nodeAt(index: number): LinkNode<T> {
 
-    const makeTable = ( currentIndex: number, currentNode: LinkNode<T> ): LinkNode<T> => {
+    const makeTable = (currentIndex: number, currentNode: LinkNode<T>): LinkNode<T> => {
 
-      if ( currentIndex !== index ) {
+      if (currentIndex !== index) {
 
-       return makeTable( currentIndex + 1, currentNode.next ); 
+       return makeTable(currentIndex + 1, currentNode.next); 
 
       }
 
@@ -177,7 +177,8 @@ class LinkedList<T> {
     // 4. index = this.length - 1: use private method
     //    nodeAt to get the Node that comes at the previous
     //    index and change its next Node; ALSO change tail
-
+    
+    
     const value = this.nodeAt(index).value;
 
     if (index == 1) {
@@ -186,23 +187,23 @@ class LinkedList<T> {
       this.tail = null;
       
     } 
-
+    
     else if (index === 0) {
 
       this.head = this.head.next;
 
     }
-
+    
     else if (index === this.length - 1) {
-
-      this.tail = this.nodeAt(this.length - 2);
-      this.nodeAt(index - 1).next = null;
+      let currentNode = this.nodeAt(index - 1);
+      this.tail = currentNode;
+      currentNode.next = null;
 
     } 
       
     else {
-
-      this.nodeAt(index - 1).next = this.nodeAt(index + 1);
+      let currentNode = this.nodeAt(index - 1);
+      currentNode.next = currentNode.next.next;
 
     }
     

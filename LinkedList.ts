@@ -95,10 +95,13 @@ class LinkedList<T> {
       this.insertAtFront(item);
 
     }
-    
+
+    else {
+
       this.tail.next = newNode;
       this.tail = newNode;
-
+      
+    }
   }
 
   /**

@@ -100,7 +100,7 @@ class LinkedList<T> {
 
       this.tail.next = newNode;
       this.tail = newNode;
-      
+
     }
   }
 
@@ -287,7 +287,7 @@ class LinkedList<T> {
       }
 
     }
-
+    
     return makeTable(this.head, 0);
 
  }

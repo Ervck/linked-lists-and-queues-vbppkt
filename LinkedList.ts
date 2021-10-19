@@ -184,7 +184,7 @@ class LinkedList<T> {
     
     const value = this.nodeAt(index).value;
 
-    if (index == 1) {
+    if (length == 1) {
 
       this.head = null;
       this.tail = null;
